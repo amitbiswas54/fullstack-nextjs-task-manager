@@ -64,7 +64,7 @@ function SignUp() {
 
 
   return (
-    <div className="bg-gray-900 rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg w-full mx-auto mt-20">
+    <div className="bg-gray-900 rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg w-full mx-auto mt-20 pb-20">
  <ToastContainer  position="bottom-center" autoClose={3000} />
 
       <h1>Sign Up </h1>
