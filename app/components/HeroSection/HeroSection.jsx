@@ -53,7 +53,7 @@ const HeroSection = () => {
         <div>
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
             <span className="h-2 w-2 rounded-full bg-emerald-400" />
-            Full-Stack Development Project - Amit Biswas
+            Full-Stack Development Project - <span className="text-emerald-400">Amit Biswas</span>
           </div>
 
           <h1 className="max-w-2xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
