@@ -1,17 +1,15 @@
 import { httpAxios } from "../helper/axiosHelper.js";
 
 export const signUpuser = async (user) => {
-    try {
-        let response = await httpAxios.post('/users', user)
-        return response.data;
-    } catch (error) {
-        console.log("STATUS:", error.response?.status);
-        console.log("BACKEND ERROR:", error.response?.data);
-        console.log("ERROR MESSAGE:", error.message);
-
-      
-    }
-}
+  try {
+    const response = await httpAxios.post("/users", user);
+    return response.data;
+  } catch (error) {
+    console.error("SIGNUP STATUS:", error.response?.status);
+    console.error("SIGNUP ERROR:", error.response?.data);
+    throw error;
+  }
+};
 
 export const loginUser = async (logindata) => {
     try {

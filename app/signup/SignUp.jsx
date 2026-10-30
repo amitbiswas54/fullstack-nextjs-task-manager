@@ -23,44 +23,55 @@ function SignUp() {
   const onchangeHandler =  (e) => {
     setFormData({...formData,[e.target.name]: e.target.value});
   };
-  const userAddHandler = async (e) => {
-    e.preventDefault();
+ 
+const userAddHandler = async (e) => {
+  e.preventDefault();
 
-
-   if(formData.name.trim()==="" || formData.email.trim()==="" || formData.password.trim()==="" || formData.about.trim()==="") {
-    toast.error("All the fields are mandataory");
-   return;
+  if (
+    formData.name.trim() === "" ||
+    formData.email.trim() === "" ||
+    formData.password.trim() === "" ||
+    formData.about.trim() === ""
+  ) {
+    toast.error("All the fields are mandatory");
+    return;
   }
 
-            try {
-            let response = await signUpuser(formData)
+  try {
+    const response = await signUpuser(formData);
 
+    // Check whether the API actually succeeded
+    if (!response || response.success === false) {
+      toast.error(response?.message || "Unable to create user");
+      return;
+    }
 
-             setFormData({
-                name: "",
-                email: "",
-                password: "",
-                about: "",
-                profileImage : "",
-             })
-             toast.success("User created successfully", {
-             position: "bottom-center",
-             autoClose: 3000,
-              hideProgressBar: false,
-             });
-             
-             
-            navigate.push('/login')
+    toast.success("User created successfully", {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+    });
 
-            return response; 
+    setFormData({
+      name: "",
+      email: "",
+      password: "",
+      about: "",
+      profileImage: "",
+    });
 
-         
+    // Navigate after the toast has time to appear
+    setTimeout(() => {
+      navigate.push("/login");
+    }, 1500);
+  } catch (error) {
+    console.error("Error creating user:", error);
+    toast.error(
+      error.response?.data?.message || "Error creating user"
+    );
+  }
+};
 
-            }catch (error) {
-            console.error('Error creating user:', error);
-            toast.error("Error creating user");
-            }
-        }
 
 
   return (
