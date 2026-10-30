@@ -10,8 +10,7 @@ connectDb()
 export  async function GET(request) {
     try {
         await connectDb();
-        const tasks = await Task.find();
-        
+        const tasks = await Task.find();       
         return NextResponse.json(tasks, { status: 200, statusText: "OK" });
     }catch (error) {
         console.error("Error fetching tasks:", error);

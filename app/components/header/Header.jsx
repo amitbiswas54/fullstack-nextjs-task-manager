@@ -80,7 +80,7 @@ const Header = () => {
 
 
       <p className="text-[9px] font-semibold tracking-[0.2em] text-slate-400">
-        SMART TASK MANAGEMENT
+        NEXT.JS TASK MANAGEMENT
       </p>
 
     </div>
@@ -90,7 +90,7 @@ const Header = () => {
 </Link>
 
         {/* ================= DESKTOP NAV ================= */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 md:flex md:ml-auto">
 
           {user ? (
             <>
@@ -103,13 +103,13 @@ const Header = () => {
               </Link>
 
               {/* Add Task */}
-              <Link
+              {/* <Link
                 href="/addTask"
                 className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-slate-400 transition hover:bg-slate-800/70 hover:text-white"
               >
                 <Plus size={16} />
                 Add Task
-              </Link>
+              </Link> */}
 
               {/* Tasks */}
               <Link
@@ -139,10 +139,9 @@ const Header = () => {
 
               <Link
                 href="/signup"
-                className="ml-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 hover:shadow-blue-500/30"
+                className="ml-2 rounded-lg bg-blue-600  px-4 py-2 text-sm font-medium text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 hover:shadow-blue-500/30"
               >
-                Get Started
-              </Link>
+Sign Up              </Link>
             </>
           )}
 
@@ -305,7 +304,7 @@ const Header = () => {
                 <Link
                   href="/login"
                   onClick={() => setMobileMenu(false)}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-slate-300 hover:bg-slate-900 hover:text-white"
+                  className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-slate-900 hover:text-white"
                 >
                   Login
                 </Link>
@@ -315,7 +314,7 @@ const Header = () => {
                   onClick={() => setMobileMenu(false)}
                   className="rounded-xl bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-blue-500"
                 >
-                  Get Started
+                  Sign Up
                 </Link>
               </>
             )}

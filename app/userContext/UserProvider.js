@@ -13,6 +13,7 @@ function UserProvider({ children }) {
     async function load() {
       try {
         const logUser = await currentUserDetails();
+        
         console.log("CURRENT USER:", logUser);
         setUser(logUser);
 

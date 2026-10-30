@@ -27,18 +27,20 @@ export const loginUser = async (logindata) => {
 
 
 export const currentUserDetails = async () => {
-    try {
-        let response = await httpAxios.get('/current', { withCredentials: true })
-         return response.data;
-    
-    }catch (error) {
-         console.log("STATUS:", error.response?.status);
-        console.log("BACKEND ERROR:", error.response?.data);
-        console.log("ERROR MESSAGE:", error.message);
-        throw error
-    }
-}
+  try {
+    const response = await httpAxios.get("/current", {
+      withCredentials: true,
+    });
 
+    return response.data;
+  } catch (error) {
+    console.log("STATUS:", error.response?.status);
+    console.log("BACKEND ERROR:", error.response?.data);
+    console.log("ERROR MESSAGE:", error.message);
+
+    throw error;
+  }
+};
 
 
 export const logoutUser = async () => {
