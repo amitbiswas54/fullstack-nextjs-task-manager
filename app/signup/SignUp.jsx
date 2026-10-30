@@ -47,8 +47,8 @@ const userAddHandler = async (e) => {
     }
 
     toast.success("User created successfully", {
-      position: "bottom-center",
-      autoClose: 3000,
+      position: "top-center",
+      autoClose: 2000,
       hideProgressBar: false,
     });
 
@@ -63,7 +63,7 @@ const userAddHandler = async (e) => {
     // Navigate after the toast has time to appear
     setTimeout(() => {
       navigate.push("/login");
-    }, 1500);
+    }, 2000);
   } catch (error) {
     console.error("Error creating user:", error);
     toast.error(
