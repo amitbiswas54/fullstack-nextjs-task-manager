@@ -27,10 +27,10 @@ function UserProvider({ children }) {
 
         setUser(undefined);
 
-        toast.error("Error in loading current User", {
-          position: "top-center",
-           toastId: "user-load-error",
-        });
+        // toast.error("Error in loading current User", {
+        //   position: "top-center",
+        //    toastId: "user-load-error",
+        // });
       }
     }
 
